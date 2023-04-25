@@ -6,9 +6,9 @@ docker build -t webfortune .
 
 docker run -dp 8005:5000 hamlvan/webfortune
 
-docker logs <container_id>
+docker logs containerid
 
-docker rm -f <container_id>
+docker rm -f containerid
 
 
 Run App Locally:
