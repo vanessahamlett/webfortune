@@ -31,8 +31,7 @@ jobs:
     - name: cowsfortune
       run: |
         python -m pip install --upgrade pip
-        pip install cowsay
-        pip install fortune
+        sudo apt-get install -y cowsay fortune
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
