@@ -29,4 +29,4 @@ The Implemented Routes:
   - GET / - redirects to GET /fortune/
 
 Testing:
-  - pytest-3 test_app.py
+  - pytest test_app.py
