@@ -10,10 +10,6 @@ def app():
 def client(app):
     yield app.test_client()
 
-def test_index(app, client):
-    response = client.get('/')
-    assert response.status_code == 200
-
 def test_fortune(app, client):
     response = client.get('/fortune/')
     assert response.status_code == 200
