@@ -17,10 +17,11 @@ def cowsay(message):
 
 @app.route('/fortune/')
 def fortune():
-    return subprocess.Popen('fortune', shell=True, stdout=subprocess.PIPE).stdout.read()
+    message = subprocess.run('fortune', shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout
+    return '<pre>' + str(message) + '</pre>'
 
 @app.route('/cowfortune/')
 def cowfortune():
-    message = subprocess.run('fortune', stdout=subprocess.PIPE, universal_newlines=True)
+    message = subprocess.run('fortune', shell=True, stdout=subprocess.PIPE, universal_newlines=True)
     output = subprocess.run(f'cowsay {message.stdout}', shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout
     return '<pre>' + str(output) + '</pre>'
