@@ -22,6 +22,5 @@ def fortune():
 
 @app.route('/cowfortune/')
 def cowfortune():
-    message = subprocess.run('fortune', shell=True, stdout=subprocess.PIPE, universal_newlines=True)
-    output = subprocess.run(f'cowsay {message.stdout}', shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout
+    output = subprocess.run(f'fortune | cowsay', shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout
     return '<pre>' + str(output) + '</pre>'
